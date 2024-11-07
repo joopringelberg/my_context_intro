@@ -1,27 +1,16 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Navbar, Nav } from 'react-bootstrap';
+import './styles.css';
 
 function App() {
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg">
-        <Container>
-          <Navbar.Brand href="#home">Mijn React App</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#about">Over Ons</Nav.Link>
-              <Nav.Link href="#contact">Contact</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-
-      <Container className="mt-4">
-        <h1>Welkom bij mijn React Bootstrap App</h1>
-        <p>Dit is een basis template om mee te beginnen.</p>
+      <div className="top-panel">
+        <span className="panel-text">Welkom bij My Contexts</span>
+      </div>
+      <Container className="main-content">
+        <h1>Welkom bij My Contexts</h1>
+        <p>Dit is een voorbeeld pagina met wat basis content.</p>
       </Container>
     </>
   );
