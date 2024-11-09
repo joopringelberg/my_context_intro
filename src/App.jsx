@@ -6,11 +6,11 @@ function App() {
   return (
     <>
       <div className="top-panel">
-        <span className="panel-text">Welkom bij My Contexts</span>
+        <span className="panel-text">MyContexts</span>
       </div>
       <Container className="main-content">
         <h1>Welkom bij My Contexts</h1>
-        <p>Dit is een voorbeeld pagina met wat basis content.</p>
+        <p>Je staat op het punt om onderdeel uit te gaan maken van de MyContext wereld. </p>
         <button className="wide-button">
           Ja ik wil graag deel uitmaken van de MyContext wereld
         </button>
