@@ -1,3 +1,8 @@
+/* Global font styling */
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
 /* Layout */
 .top-panel {
   height: 40px;
@@ -11,6 +16,7 @@
 .panel-text {
   color: white;
   font-size: 16px;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 .main-content {
@@ -29,4 +35,22 @@ p {
   color: #666;
   line-height: 1.6;
   font-size: 16px;
-} 
+}
+
+.wide-button {
+  width: 100%;
+  max-width: 600px;
+  padding: 15px 30px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.wide-button:hover {
+  background-color: #0056b3;
+}

@@ -11,6 +11,9 @@ function App() {
       <Container className="main-content">
         <h1>Welkom bij My Contexts</h1>
         <p>Dit is een voorbeeld pagina met wat basis content.</p>
+        <button className="wide-button">
+          Ja ik wil graag deel uitmaken van de MyContext wereld
+        </button>
       </Container>
     </>
   );
