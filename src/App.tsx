@@ -69,8 +69,18 @@ const App: React.FC = (): ReactElement => {
           title="MyContexts FAQ's"
         >
           <div className="panel-body">
-            <h3>Veelgestelde vragen</h3>
-            <p>Hier komen de FAQ's...</p>
+          <ul>
+              
+                <details>
+                  <summary>Waarom is MyContext veilig?</summary>
+                  <p>Hier komt het antwoord over de veiligheid van MyContext...</p>
+                </details>
+                <details>
+                  <summary>noot</summary>
+                  <p>Hier komt de uitleg over de noot...</p>
+                </details>
+              
+            </ul>
           </div>
         </Panel>
       }
@@ -81,8 +91,10 @@ const App: React.FC = (): ReactElement => {
           title="Installeer MyContexts"
         >
           <div className="panel-body">
-            <h3>Installatie stappen</h3>
-            <p>Hier komen de installatie instructies...</p>
+            <ul>
+              <li><a href="#">Waarom is MyContext veilig</a></li>
+              <li><a href="#">noot</a></li>
+            </ul>
           </div>
         </Panel>
       }
