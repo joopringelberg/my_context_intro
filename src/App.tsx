@@ -90,15 +90,20 @@ const App: React.FC = (): ReactElement => {
                     Dus niet via een Server.</p>
                 </details>
                 <details>
-                  <summary>Wat is het verschil met bijvoorbeeld WhatApp?</summary>
+                  <summary>Wat is het verschil met bijvoorbeeld WhatsApp?</summary>
                   <p>Om te beginnen is MyContext niet een App, maar een taal en een platform.
-                  In WhatsApp draat het om Chats. 
-                  Iedere Contexts in MyContexts heeft standaard een Chat maar ook gegevens en andere Contexten waar je heen kan gaan. 
-                  We noemen dit de Wie-Wat-Waar opzet. Wie doen er allemaal mee in een Context, 
+                  In WhatsApp draait het om Chats. 
+                  Iedere Context in MyContexts heeft standaard een Chat maar ook gegevens en andere Contexten waar je heen kan gaan. 
+                  We noemen dit de Wie-Wat-Waar opzet. Wie doen er allemaal mee in een Context?, 
                   Wat voor gegevens zijn er in de Context waar je samen aan kuntwerken en 
                   Waar kun je naar allemaal naar toe. 
-                  We denken dan ook dat WWW binnenkort niet meer staat voor World Wide Web maar voor Wie Wat Waar.
+                  We denken dan ook dat WWW binnenkort niet meer staat voor World Wide Web maar voor Wie Wat Waar :-)
                   </p>
+                </details>
+                <details>
+                  <summary>Wie heeft MyContexts gemaakt?</summary>
+                  <p>MyContext is het resultaat van meer dan zeven jaar noeste arbeid 
+                  van Joop Ringelberg en Cor Baars. Beide Cognitie Wetenschappers en ervaren IT-ers</p>
                 </details>
             </ul>
           </div>
