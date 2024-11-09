@@ -16,7 +16,10 @@ function App() {
           Als dat zo is t zo is ga dan eerst naar onze FAQ's
         </p>
         <button className="wide-button">
-          Ja ik wil graag deel uitmaken van de MyContext wereld
+          MyContexts FAQ's 
+        </button>
+        <button className="wide-button">
+          Installeer MyContexts 
         </button>
       </Container>
     </>
