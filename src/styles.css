@@ -6,7 +6,7 @@ body {
 /* Layout */
 .top-panel {
   height: 40px;
-  background-color: #007bff;
+  background-color: #5c8abb;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,7 +41,7 @@ p {
   width: 100%;
   max-width: 600px;
   padding: 15px 30px;
-  background-color: #007bff;
+  background-color: #5c8abb;
   color: white;
   border: none;
   border-radius: 5px;
