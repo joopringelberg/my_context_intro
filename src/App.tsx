@@ -105,6 +105,40 @@ const App: React.FC = (): ReactElement => {
                   <p>MyContext is het resultaat van meer dan zeven jaar noeste arbeid 
                   van Joop Ringelberg en Cor Baars. Beide Cognitie Wetenschappers en ervaren IT-ers</p>
                 </details>
+                <details>
+                  <summary>Waarom kost MyConexts zo weinig?</summary>
+                  <p>Omdat wij geen centrale sewrver hebben 
+                    en je alleen je eigen apparaten gebruikt om gegevens op te slaan en te verwerken 
+                    maken we bijna geen kosten. Daarom is 2 Euro per maand of een tientje per jaar voldoende.
+                  </p>
+                </details>
+                <details>
+                  <summary>Waarom is MyContexts duurzaam?</summary>
+                  <p>Geen servers betekent geen Datacenters die energie slurpen 
+                    en het landschap vervuilen. 
+                  </p>
+                </details>
+                <details>
+                  <summary>Stel mijn smartphone gaat kapot of wordt gestolen. Ben ik dan alles kwijt?</summary>
+                  <p>Nee, we hebben meerdere mechanismen ontworpen om je gegevens te herstellen
+                    ook al doet je smartphone het niet meer. Meerdere Contexties dienen als een back-up 
+                    voor je data. Voer een code in op de MyContexts website, een code die je van ons krijgt
+                    wanneer je mee gaat doen en we herstellen je data op een ander apparaat. 
+                  </p>
+                </details>
+                <details>
+                  <summary>Kan ik MyContexts ook gebruiken op mijn tablet, laptop of desktop?</summary>
+                  <p>Ja, je lkunt net zoveel apparaten met MyContexts gebruiken. Wij zorgen ervoor dat 
+                    je gegevens en apps tussen je apparaten gesynced worden. 
+                  </p>
+                </details>
+                <details>
+                  <summary>KAn ik ook zelf MyContexts Apps maken?</summary>
+                  <p>Vooralsnog maken wij de Apps maar over niet al te lange tijd 
+                    publiceren we de taal en de tools om dit zelf te kunnen. Je zult dan zien 
+                    dat Apps maken voor MyContexts erg eenvoudig is.
+                  </p>
+                </details>
             </ul>
           </div>
         </Panel>
