@@ -95,7 +95,7 @@ const App: React.FC = (): ReactElement => {
                   In WhatsApp draait het om Chats. 
                   Iedere Context in MyContexts heeft standaard een Chat maar ook gegevens en andere Contexten waar je heen kan gaan. 
                   We noemen dit de Wie-Wat-Waar opzet. Wie doen er allemaal mee in een Context?, 
-                  Wat voor gegevens zijn er in de Context waar je samen aan kuntwerken en 
+                  Wat voor gegevens zijn er in de Context waar je samen aan kunt werken en 
                   Waar kun je naar allemaal naar toe. 
                   We denken dan ook dat WWW binnenkort niet meer staat voor World Wide Web maar voor Wie Wat Waar :-)
                   </p>
