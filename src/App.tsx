@@ -86,7 +86,8 @@ const App: React.FC = (): ReactElement => {
                     Dingrollen) een toepassing vormgeeft. 
                     Op basis hiervan rekenen we uit welke gebruikers in een Context
                     welke gegevens moet krijgen om zijn of haar rol in een Context te spelen. 
-                    Vervolgens sturen we die gegevens rechtstreeks naar de devices van die gebruikers. 
+                    Vervolgens sturen we die gegevens naar de devices van die gebruikers.
+                    Zoals gezegd, geen servers die je gegevens opslaan.
                     Dus niet via een Server.</p>
                 </details>
                 <details>
@@ -99,11 +100,6 @@ const App: React.FC = (): ReactElement => {
                   Waar kun je naar allemaal naar toe. 
                   We denken dan ook dat WWW binnenkort niet meer staat voor World Wide Web maar voor Wie Wat Waar :-)
                   </p>
-                </details>
-                <details>
-                  <summary>Wie heeft MyContexts gemaakt?</summary>
-                  <p>MyContext is het resultaat van meer dan zeven jaar noeste arbeid 
-                  van Joop Ringelberg en Cor Baars. Beide Cognitie Wetenschappers en ervaren IT-ers</p>
                 </details>
                 <details>
                   <summary>Waarom kost MyConexts zo weinig?</summary>
@@ -119,7 +115,7 @@ const App: React.FC = (): ReactElement => {
                   </p>
                 </details>
                 <details>
-                  <summary>Stel mijn smartphone gaat kapot of wordt gestolen. Ben ik dan alles kwijt?</summary>
+                  <summary>Stel mijn smartphone gaat kapot. Ben ik dan alles kwijt?</summary>
                   <p>Nee, we hebben meerdere mechanismen ontworpen om je gegevens te herstellen
                     ook al doet je smartphone het niet meer. Meerdere Contexties dienen als een back-up 
                     voor je data. Voer een code in op de MyContexts website, een code die je van ons krijgt
@@ -127,16 +123,29 @@ const App: React.FC = (): ReactElement => {
                   </p>
                 </details>
                 <details>
-                  <summary>Kan ik MyContexts ook gebruiken op mijn tablet, laptop of desktop?</summary>
+                  <summary>Werkt MyContexts ook op mijn andere apparaten?</summary>
                   <p>Ja, je lkunt net zoveel apparaten met MyContexts gebruiken. Wij zorgen ervoor dat 
                     je gegevens en apps tussen je apparaten gesynced worden. 
                   </p>
                 </details>
                 <details>
-                  <summary>KAn ik ook zelf MyContexts Apps maken?</summary>
+                  <summary>Kan ik ook zelf MyContexts Apps maken?</summary>
                   <p>Vooralsnog maken wij de Apps maar over niet al te lange tijd 
                     publiceren we de taal en de tools om dit zelf te kunnen. Je zult dan zien 
                     dat Apps maken voor MyContexts erg eenvoudig is.
+                  </p>
+                </details>
+                <details>
+                  <summary>Wie heeft MyContexts gemaakt?</summary>
+                  <p>MyContext is het resultaat van meer dan zeven jaar noeste arbeid 
+                  van Joop Ringelberg en Cor Baars. Beide Cognitie Wetenschappers en ervaren IT-ers</p>
+                </details>
+                <details>
+                  <summary>Waarom is dit nooit eerder gedaan?</summary>
+                  <p>Je begrijpt dat bedrijven die je naar hun servers lokken om daar geld aan te verdienen
+                    dit geen goed idee vinden en hier niet in investeren. 
+                    Verder is het, ondanks de eenvoud van het idee, erg complex om te maken
+                    We hebben er niet voor niets meer dan zeven jaar aan gewerkt.
                   </p>
                 </details>
             </ul>
