@@ -35,6 +35,21 @@ const App: React.FC = (): ReactElement => {
   const [showFAQPanel, setShowFAQPanel] = useState<boolean>(false);
   const [showInstallPanel, setShowInstallPanel] = useState<boolean>(false);
   const [advancedInstall, setAdvancedInstall] = useState<boolean>(false);
+  const [deviceName, setDeviceName] = useState<string>('');
+  const [useOwnDatabase, setUseOwnDatabase] = useState<boolean>(false);
+  const [dbUrl, setDbUrl] = useState<string>('');
+  const [dbPort, setDbPort] = useState<string>('');
+  const [dbUsername, setDbUsername] = useState<string>('');
+  const [dbPassword, setDbPassword] = useState<string>('');
+  const [useOwnKey, setUseOwnKey] = useState<boolean>(false);
+  const [keyFile, setKeyFile] = useState<File | null>(null);
+  const [notFirstMyContexts, setNotFirstMyContexts] = useState<boolean>(false);
+  const [identityFile, setIdentityFile] = useState<File | null>(null);
+
+  const handleInstall = () => {
+    // Hier komt de installatie logica
+    console.log('Start installatie proces');
+  };
 
   return (
     <>
@@ -176,15 +191,55 @@ const App: React.FC = (): ReactElement => {
           title="Installeer MyContexts"
         >
           <div className="panel-body">
-            <p>Met de geavanceerde installatie kan je extra opties configureren. 
-              Gebruik de geavanceerde installatie als je:<br></br><br></br>
-               <ul>
-                 <li>al eerder MyContexts hebt geinstalleerd</li>
-                 <li>Je eigen database voor MyContexts wilt gebruiken</li>
-                 <li>Je eigen cryptografische sleutel wilt gebruiken</li>
-               </ul>
-               </p>
+            <div className="input-container">
+              <label htmlFor="deviceName">De naam voor het apparaat waarop je installeert:</label>
+              <input 
+               type="text"
+                id="deviceName"
+                value={deviceName}
+                onChange={(e) => setDeviceName(e.target.value)}
+              />
+            </div>
+
             <div className="switch-container">
+              <label className="switch">
+                <input 
+                  type="checkbox"
+                  onChange={(e) => setNotFirstMyContexts(e.target.checked)}
+                  checked={notFirstMyContexts}
+                />
+                <span className="slider round"></span>
+              </label>
+              <span className="switch-label">
+                Niet mijn eerste installatie
+                <span className="help-icon" title="Kies deze optie als je MyContexts al eerder hebt geïnstalleerd op een ander apparaat. Je hebt dan een identity file en een sleutel nodig van je eerdere installatie.">?</span>
+              </span>
+            </div>
+
+            {notFirstMyContexts && (
+              <div className="file-uploads">
+                <div className="file-upload-container">
+                  <label htmlFor="identityFile">Upload de identity file:</label>
+                  <input
+                    type="file"
+                    id="identityFile"
+                    accept=".id"
+                    onChange={(e) => setIdentityFile(e.target.files?.[0] || null)}
+                  />
+                </div>
+                <div className="file-upload-container">
+                  <label htmlFor="keyFile">Upload een sleutel:</label>
+                  <input
+                    type="file"
+                    id="keyFile"
+                    accept=".key,.pem"
+                    onChange={(e) => setKeyFile(e.target.files?.[0] || null)}
+                  />
+                </div>
+              </div>
+            )}
+
+            <div className="switch-container" style={{ marginTop: '30px' }}>
               <label className="switch">
                 <input 
                   type="checkbox"
@@ -193,8 +248,18 @@ const App: React.FC = (): ReactElement => {
                 />
                 <span className="slider round"></span>
               </label>
-              <span className="switch-label">Geavanceerde installatie</span>
+              <span className="switch-label">
+                Geavanceerde installatie
+                <span className="help-icon" title="Met de geavanceerde installatie kan je extra opties configureren zoals een eigen database of cryptografische sleutel.">?</span>
+              </span>
             </div>
+            
+            <button 
+              className="wide-button"
+              onClick={() => handleInstall()}
+            >
+              Installeer MyContexts
+            </button>
           </div>
         </Panel>
       }
@@ -205,7 +270,91 @@ const App: React.FC = (): ReactElement => {
           title="Geavanceerde installatie MyContexts"
         >
           <div className="panel-body">
-            {/* Hier komt de inhoud van het geavanceerde installatie panel */}
+            <div className="switch-container">
+              <label className="switch">
+                <input 
+                  type="checkbox"
+                  onChange={(e) => setUseOwnDatabase(e.target.checked)}
+                  checked={useOwnDatabase}
+                />
+                <span className="slider round"></span>
+              </label>
+              <span className="switch-label">
+                Ik wil mijn eigen database gebruiken
+              </span>
+            </div>
+
+            {useOwnDatabase && (
+              <div className="database-inputs">
+                <div className="input-container">
+                  <label htmlFor="dbUrl">URL:</label>
+                  <input 
+                    type="text"
+                    id="dbUrl"
+                    value={dbUrl}
+                    onChange={(e) => setDbUrl(e.target.value)}
+                  />
+                </div>
+                <div className="input-container">
+                  <label htmlFor="dbPort">Poort:</label>
+                  <input 
+                    type="text"
+                    id="dbPort"
+                    value={dbPort}
+                    onChange={(e) => setDbPort(e.target.value)}
+                  />
+                </div>
+                <div className="input-container">
+                  <label htmlFor="dbUsername">Username:</label>
+                  <input 
+                    type="text"
+                    id="dbUsername"
+                    value={dbUsername}
+                    onChange={(e) => setDbUsername(e.target.value)}
+                  />
+                </div>
+                <div className="input-container">
+                  <label htmlFor="dbPassword">Password:</label>
+                  <input 
+                    type="password"
+                    id="dbPassword"
+                    value={dbPassword}
+                    onChange={(e) => setDbPassword(e.target.value)}
+                  />
+                </div>
+              </div>
+            )}
+
+            <div className="switch-container" style={{ marginTop: '20px' }}>
+              <label className="switch">
+                <input 
+                  type="checkbox"
+                  onChange={(e) => setUseOwnKey(e.target.checked)}
+                  checked={useOwnKey}
+                />
+                <span className="slider round"></span>
+              </label>
+              <span className="switch-label">Ik wil mijn eigen sleutel gebruiken</span>
+            </div>
+
+            {useOwnKey && (
+              <div className="file-upload-container">
+                <label htmlFor="keyFile">Selecteer uw sleutelbestand:</label>
+                <input
+                  type="file"
+                  id="keyFile"
+                  accept=".key,.pem"
+                  onChange={(e) => setKeyFile(e.target.files?.[0] || null)}
+                />
+              </div>
+            )}
+
+            <button 
+              className="wide-button"
+              onClick={() => handleInstall()}
+            >
+              Installeer MyContexts
+            </button>
           </div>
         </Panel>
       }
