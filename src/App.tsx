@@ -36,13 +36,6 @@ const App: React.FC = (): ReactElement => {
   const [showInstallPanel, setShowInstallPanel] = useState<boolean>(false);
   const [advancedInstall, setAdvancedInstall] = useState<boolean>(false);
   const [deviceName, setDeviceName] = useState<string>('');
-  const [useOwnDatabase, setUseOwnDatabase] = useState<boolean>(false);
-  const [dbUrl, setDbUrl] = useState<string>('');
-  const [dbPort, setDbPort] = useState<string>('');
-  const [dbUsername, setDbUsername] = useState<string>('');
-  const [dbPassword, setDbPassword] = useState<string>('');
-  const [useOwnKey, setUseOwnKey] = useState<boolean>(false);
-  const [keyFile, setKeyFile] = useState<File | null>(null);
   const [notFirstMyContexts, setNotFirstMyContexts] = useState<boolean>(false);
   const [identityFile, setIdentityFile] = useState<File | null>(null);
 
@@ -227,15 +220,6 @@ const App: React.FC = (): ReactElement => {
                     onChange={(e) => setIdentityFile(e.target.files?.[0] || null)}
                   />
                 </div>
-                <div className="file-upload-container">
-                  <label htmlFor="keyFile">Upload een sleutel:</label>
-                  <input
-                    type="file"
-                    id="keyFile"
-                    accept=".key,.pem"
-                    onChange={(e) => setKeyFile(e.target.files?.[0] || null)}
-                  />
-                </div>
               </div>
             )}
 
@@ -270,85 +254,6 @@ const App: React.FC = (): ReactElement => {
           title="Geavanceerde installatie MyContexts"
         >
           <div className="panel-body">
-            <div className="switch-container">
-              <label className="switch">
-                <input 
-                  type="checkbox"
-                  onChange={(e) => setUseOwnDatabase(e.target.checked)}
-                  checked={useOwnDatabase}
-                />
-                <span className="slider round"></span>
-              </label>
-              <span className="switch-label">
-                Ik wil mijn eigen database gebruiken
-              </span>
-            </div>
-
-            {useOwnDatabase && (
-              <div className="database-inputs">
-                <div className="input-container">
-                  <label htmlFor="dbUrl">URL:</label>
-                  <input 
-                    type="text"
-                    id="dbUrl"
-                    value={dbUrl}
-                    onChange={(e) => setDbUrl(e.target.value)}
-                  />
-                </div>
-                <div className="input-container">
-                  <label htmlFor="dbPort">Poort:</label>
-                  <input 
-                    type="text"
-                    id="dbPort"
-                    value={dbPort}
-                    onChange={(e) => setDbPort(e.target.value)}
-                  />
-                </div>
-                <div className="input-container">
-                  <label htmlFor="dbUsername">Username:</label>
-                  <input 
-                    type="text"
-                    id="dbUsername"
-                    value={dbUsername}
-                    onChange={(e) => setDbUsername(e.target.value)}
-                  />
-                </div>
-                <div className="input-container">
-                  <label htmlFor="dbPassword">Password:</label>
-                  <input 
-                    type="password"
-                    id="dbPassword"
-                    value={dbPassword}
-                    onChange={(e) => setDbPassword(e.target.value)}
-                  />
-                </div>
-              </div>
-            )}
-
-            <div className="switch-container" style={{ marginTop: '20px' }}>
-              <label className="switch">
-                <input 
-                  type="checkbox"
-                  onChange={(e) => setUseOwnKey(e.target.checked)}
-                  checked={useOwnKey}
-                />
-                <span className="slider round"></span>
-              </label>
-              <span className="switch-label">Ik wil mijn eigen sleutel gebruiken</span>
-            </div>
-
-            {useOwnKey && (
-              <div className="file-upload-container">
-                <label htmlFor="keyFile">Selecteer uw sleutelbestand:</label>
-                <input
-                  type="file"
-                  id="keyFile"
-                  accept=".key,.pem"
-                  onChange={(e) => setKeyFile(e.target.files?.[0] || null)}
-                />
-              </div>
-            )}
-
             <button 
               className="wide-button"
               onClick={() => handleInstall()}

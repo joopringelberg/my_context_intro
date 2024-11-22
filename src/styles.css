@@ -222,21 +222,6 @@ input:checked + .slider:before {
   font-size: 1rem;
 }
 
-.database-inputs {
-  margin-top: 20px;
-}
-
-.database-inputs .input-container {
-  margin-bottom: 15px;
-}
-
-.database-inputs input {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
 .file-upload-container {
   margin-top: 15px;
   padding: 15px;
@@ -289,7 +274,7 @@ input:checked + .slider:before {
 }
 
 .help-icon:hover::after {
-  content: attr(data-tooltip);
+  content: attr(title);
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
