@@ -38,6 +38,13 @@ const App: React.FC = (): ReactElement => {
   const [deviceName, setDeviceName] = useState<string>('');
   const [notFirstMyContexts, setNotFirstMyContexts] = useState<boolean>(false);
   const [identityFile, setIdentityFile] = useState<File | null>(null);
+  const [useOwnDatabase, setUseOwnDatabase] = useState<boolean>(false);
+  const [useOwnKey, setUseOwnKey] = useState<boolean>(false);
+  const [dbUrl, setDbUrl] = useState<string>('');
+  const [dbPort, setDbPort] = useState<string>('');
+  const [dbUsername, setDbUsername] = useState<string>('');
+  const [dbPassword, setDbPassword] = useState<string>('');
+  const [keyFile, setKeyFile] = useState<File | null>(null);
 
   const handleInstall = () => {
     // Hier komt de installatie logica
@@ -205,7 +212,12 @@ const App: React.FC = (): ReactElement => {
               </label>
               <span className="switch-label">
                 Niet mijn eerste installatie
-                <span className="help-icon" title="Kies deze optie als je MyContexts al eerder hebt geïnstalleerd op een ander apparaat. Je hebt dan een identity file en een sleutel nodig van je eerdere installatie.">?</span>
+                <button 
+                  className="question-button" 
+                  title="Als dit niet je eerste MyContext installatie is moet je een identity file uploaden. Daarmee zorgen we ervoor dat de gegevens tussen je verschillende apparaten worden gesynchroniseerd."
+                >
+                  ?
+                </button>
               </span>
             </div>
 
@@ -234,7 +246,12 @@ const App: React.FC = (): ReactElement => {
               </label>
               <span className="switch-label">
                 Geavanceerde installatie
-                <span className="help-icon" title="Met de geavanceerde installatie kan je extra opties configureren zoals een eigen database of cryptografische sleutel.">?</span>
+                <button 
+                  className="question-button" 
+                  title="Wanneer je je eigen database voor MyContexts wilt gebruiken of je je wilt je eigen cryptografische sleutel gebruiken zet dan geavanceerde installatie aan."
+                >
+                  ?
+                </button>
               </span>
             </div>
             
@@ -254,6 +271,99 @@ const App: React.FC = (): ReactElement => {
           title="Geavanceerde installatie MyContexts"
         >
           <div className="panel-body">
+            <div className="switch-container">
+              <label className="switch">
+                <input 
+                  type="checkbox"
+                  onChange={(e) => setUseOwnDatabase(e.target.checked)}
+                  checked={useOwnDatabase}
+                />
+                <span className="slider round"></span>
+              </label>
+              <span className="switch-label">
+                Ik wil mijn eigen database gebruiken
+                <button 
+                  className="question-button" 
+                  title="Als je je eigen database wilt gebruiken moet je een aantal gegevens opgeven."
+                >
+                  ?
+                </button>
+              </span>
+            </div>
+
+            {useOwnDatabase && (
+              <div className="database-inputs">
+                <div className="input-container">
+                  <label htmlFor="dbUrl">Database URL:</label>
+                  <input 
+                    type="text"
+                    id="dbUrl"
+                    value={dbUrl}
+                    onChange={(e) => setDbUrl(e.target.value)}
+                  />
+                </div>
+                <div className="input-container">
+                  <label htmlFor="dbPort">Poort:</label>
+                  <input 
+                    type="text"
+                    id="dbPort"
+                    value={dbPort}
+                    onChange={(e) => setDbPort(e.target.value)}
+                  />
+                </div>
+                <div className="input-container">
+                  <label htmlFor="dbUsername">Username:</label>
+                  <input 
+                    type="text"
+                    id="dbUsername"
+                    value={dbUsername}
+                    onChange={(e) => setDbUsername(e.target.value)}
+                  />
+                </div>
+                <div className="input-container">
+                  <label htmlFor="dbPassword">Password:</label>
+                  <input 
+                    type="text"
+                    id="dbPassword"
+                    value={dbPassword}
+                    onChange={(e) => setDbPassword(e.target.value)}
+                  />
+                </div>
+              </div>
+            )}
+
+            <div className="switch-container" style={{ marginTop: '20px' }}>
+              <label className="switch">
+                <input 
+                  type="checkbox"
+                  onChange={(e) => setUseOwnKey(e.target.checked)}
+                  checked={useOwnKey}
+                />
+                <span className="slider round"></span>
+              </label>
+              <span className="switch-label">
+                Ik wil mijn eigen sleutel gebruiken
+                <button 
+                  className="question-button" 
+                  title="Als je je eigen cryptografische sleutel wilt gebruiken moet je die uploaden."
+                >
+                  ?
+                </button>
+              </span>
+            </div>
+
+            {useOwnKey && (
+              <div className="file-upload-container">
+                <label htmlFor="keyFile">Upload nu het sleutel bestand:</label>
+                <input
+                  type="file"
+                  id="keyFile"
+                  accept=".key,.pem"
+                  onChange={(e) => setKeyFile(e.target.files?.[0] || null)}
+                />
+              </div>
+            )}
+
             <button 
               className="wide-button"
               onClick={() => handleInstall()}
