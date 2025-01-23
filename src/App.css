@@ -1,0 +1,63 @@
+/* App.css - CSS for Wie Wat Waar UI */
+
+/* Algemene stijlregels */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Navbar stijl */
+.navbar {
+  background-color: #6c92b9 !important;
+}
+
+/* Titels en headers */
+h1, h2 {
+  color: #7a8d9f;
+  font-weight: bold;
+}
+
+/* Kaarten en lijsten */
+.card {
+  border: 2px solid #627d97 !important;
+}
+
+.card-header {
+  background-color: #517aa3 !important;
+  color: white !important;
+  font-weight: bold;
+  text-align: center;
+}
+
+.list-group-item {
+  border-left: 2px solid #516a84 !important;
+  border-right: 2px solid #6c88a4 !important;
+}
+
+/* Lijst geselecteerd item hover */
+.list-group-item:hover {
+  background-color: #e7f1ff !important;
+  color: #89a6c3 !important;
+  font-weight: bold;
+}
+
+/* Knoppen en links */
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Containers en marges */
+.container {
+  padding-top: 20px;
+}
+
+/* Custom borders */
+.border-primary {
+  border-color: #6284a6 !important;
+}
+
+/* Lijstacties */
+.list-group-item.action {
+  cursor: pointer;
+}
