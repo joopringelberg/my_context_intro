@@ -243,12 +243,7 @@ const InstallModal: React.FC<{ show: boolean; onHide: () => void }> = ({ show, o
             )}
 
           <Form.Group>
-            <Form.Check
-              type="switch"
-              label="Gebruik eigen cryptografische sleutel"
-              onChange={(e) => setUseOwnKey(e.target.checked)}
-            />
-            {
+            <Slider label="Gebruik eigen cryptografische sleutel" callback={setUseOwnKey} />            {
               useOwnKey && (
                 <Container>
                   <Form.Group controlId="formKeyFileUpload" className="mt-3">
