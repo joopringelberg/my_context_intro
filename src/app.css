@@ -1,32 +1,63 @@
-.slide-in-bottom {
-  animation: slide-in-bottom 0.5s ease-out;
+/* App.css - CSS for Wie Wat Waar UI */
+
+/* Algemene stijlregels */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
 }
 
-@keyframes slide-in-bottom {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+/* Navbar stijl */
+.navbar {
+  background-color: #6c92b9 !important;
 }
 
-.form-check-sm .form-check-input {
-  width: 1rem;
-  height: 1rem;
+/* Titels en headers */
+h1, h2 {
+  color: #7a8d9f;
+  font-weight: bold;
 }
 
-.form-check-sm .form-check-label {
-  font-size: 0.875rem; /* Small font size */
+/* Kaarten en lijsten */
+.card {
+  border: 2px solid #627d97 !important;
 }
 
-.form-check-lg .form-check-input {
-  width: 2.5rem;
-  height: 1.5rem;
+.card-header {
+  background-color: #517aa3 !important;
+  color: white !important;
+  font-weight: bold;
+  text-align: center;
 }
 
-.form-check-lg .form-check-label {
-  font-size: 1.25rem; /* Large font size */
+.list-group-item {
+  border-left: 2px solid #516a84 !important;
+  border-right: 2px solid #6c88a4 !important;
+}
+
+/* Lijst geselecteerd item hover */
+.list-group-item:hover {
+  background-color: #e7f1ff !important;
+  color: #89a6c3 !important;
+  font-weight: bold;
+}
+
+/* Knoppen en links */
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Containers en marges */
+.container {
+  padding-top: 20px;
+}
+
+/* Custom borders */
+.border-primary {
+  border-color: #6284a6 !important;
+}
+
+/* Lijstacties */
+.list-group-item.action {
+  cursor: pointer;
 }
