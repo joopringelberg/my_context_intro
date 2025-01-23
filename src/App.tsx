@@ -37,14 +37,14 @@ const App: React.FC = (): ReactElement => {
   const [advancedInstall, setAdvancedInstall] = useState<boolean>(false);
   const [deviceName, setDeviceName] = useState<string>('');
   const [notFirstMyContexts, setNotFirstMyContexts] = useState<boolean>(false);
-  const [identityFile, setIdentityFile] = useState<File | null>(null);
+  // const [identityFile, setIdentityFile] = useState<File | null>(null);
   const [useOwnDatabase, setUseOwnDatabase] = useState<boolean>(false);
   const [useOwnKey, setUseOwnKey] = useState<boolean>(false);
   const [dbUrl, setDbUrl] = useState<string>('');
   const [dbPort, setDbPort] = useState<string>('');
   const [dbUsername, setDbUsername] = useState<string>('');
   const [dbPassword, setDbPassword] = useState<string>('');
-  const [keyFile, setKeyFile] = useState<File | null>(null);
+  // const [keyFile, setKeyFile] = useState<File | null>(null);
 
   const handleInstall = () => {
     // Hier komt de installatie logica
@@ -229,7 +229,7 @@ const App: React.FC = (): ReactElement => {
                     type="file"
                     id="identityFile"
                     accept=".id"
-                    onChange={(e) => setIdentityFile(e.target.files?.[0] || null)}
+                    // onChange={(e) => setIdentityFile(e.target.files?.[0] || null)}
                   />
                 </div>
               </div>
@@ -359,7 +359,7 @@ const App: React.FC = (): ReactElement => {
                   type="file"
                   id="keyFile"
                   accept=".key,.pem"
-                  onChange={(e) => setKeyFile(e.target.files?.[0] || null)}
+                  // onChange={(e) => setKeyFile(e.target.files?.[0] || null)}
                 />
               </div>
             )}
